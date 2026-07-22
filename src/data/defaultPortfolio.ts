@@ -1213,12 +1213,12 @@ export const defaultPortfolio: PortfolioData = {
         shortDescription: "A story about love, memories and second chances.",
         published: true,
         publishYear: "2025",
-        pages: 280,
+        pages: 106,
         language: "English",
         purchaseLinks: {
-          amazon: "https://amazon.com",
-          kindle: "https://amazon.com",
-          paperback: "https://amazon.com"
+          amazon: "https://amzn.in/d/0dat733U",
+          kindle: "https://amzn.in/d/0dat733U",
+          paperback: "https://amzn.in/d/0dat733U"
         },
         gallery: []
       },
@@ -1506,18 +1506,13 @@ export const defaultPortfolio: PortfolioData = {
   socials: [
     {
       platform: "GitHub",
-      username: "renganathan-a",
-      url: "https://github.com"
+      username: "Renganathan21",
+      url: "https://github.com/Renganathan21"
     },
     {
       platform: "LinkedIn",
-      username: "renganathan-a",
-      url: "https://linkedin.com"
-    },
-    {
-      platform: "Twitter",
-      username: "renganathan_a",
-      url: "https://twitter.com"
+      username: "renga-nathan-a",
+      url: "https://www.linkedin.com/in/renga-nathan-a-596899226/"
     }
   ],
 

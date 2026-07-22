@@ -83,24 +83,6 @@ export default function App() {
       --card: ${activeTheme.cardBackgroundColor};
       --text: ${activeTheme.textColor};
       --text-secondary: ${activeTheme.textSecondaryColor};
-      
-      --slate-50: ${isDarkMode ? "#f8fafc" : "#0f172a"};
-      --slate-100: ${isDarkMode ? "#f1f5f9" : "#1e293b"};
-      --slate-200: ${isDarkMode ? "#e2e8f0" : "#334155"};
-      --slate-300: ${isDarkMode ? "#cbd5e1" : "#475569"};
-      --slate-400: ${isDarkMode ? "#94a3b8" : "#475569"};
-      --slate-500: ${isDarkMode ? "#64748b" : "#64748b"};
-      --slate-600: ${isDarkMode ? "#475569" : "#cbd5e1"};
-      --slate-700: ${isDarkMode ? "#334155" : "#e2e8f0"};
-      --slate-800: ${isDarkMode ? "#1e293b" : "#cbd5e1"};
-      --slate-900: ${isDarkMode ? "#0f172a" : "#f1f5f9"};
-      --slate-950: ${isDarkMode ? "#020617" : "#f8fafc"};
-
-      --color-white-custom: ${isDarkMode ? "#ffffff" : "#0f172a"};
-      --color-black-custom: ${isDarkMode ? "#000000" : "#ffffff"};
-      
-      --cyan-400: ${isDarkMode ? "#22d3ee" : "#4f46e5"};
-      --cyan-500: ${isDarkMode ? "#06b6d4" : "#4338ca"};
     }
     body {
       background-color: ${activeTheme.backgroundColor};
@@ -110,7 +92,7 @@ export default function App() {
     
     ::selection {
       background-color: ${activeTheme.primaryColor};
-      color: #000000;
+      color: #ffffff;
     }
   `;
 
@@ -165,21 +147,21 @@ export default function App() {
         />
 
         {/* Statistics block inline ribbon */}
-        <section className="bg-slate-950 py-16 px-6 border-y border-slate-900/60 relative overflow-hidden">
+        <section className="bg-slate-100 dark:bg-slate-950 py-16 px-6 border-y border-slate-200 dark:border-slate-900/60 relative overflow-hidden transition-colors duration-300">
           <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {portfolioData.statistics.map((stat) => (
               <div
                 key={stat.label}
-                className="text-left space-y-1 p-5 rounded border border-slate-900 bg-slate-900/10 hover:border-slate-800 transition-all duration-300 relative overflow-hidden group"
+                className="text-left space-y-1 p-5 rounded-xl border border-slate-200 dark:border-slate-900 bg-white dark:bg-slate-900/10 hover:border-slate-300 dark:hover:border-slate-800 transition-all duration-300 relative overflow-hidden group shadow-2xs dark:shadow-none"
               >
                 {/* Micro accent block */}
-                <div className="p-2 w-fit rounded bg-slate-950 border border-slate-900 text-cyan-400 mb-2">
+                <div className="p-2 w-fit rounded-md bg-indigo-50 dark:bg-slate-950 border border-indigo-100 dark:border-slate-900 text-indigo-600 dark:text-cyan-400 mb-2">
                   <LucideIcon name={stat.icon} size={14} />
                 </div>
-                <div className="font-mono text-2xl font-extrabold text-white tracking-tight">
+                <div className="font-mono text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                   {stat.value}
                 </div>
-                <div className="font-sans text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                <div className="font-sans text-[10px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
                   {stat.label}
                 </div>
               </div>
@@ -230,17 +212,17 @@ export default function App() {
       </main>
 
       {/* Footer Branding Area */}
-      <footer className="py-16 px-6 bg-slate-950 border-t border-slate-900 text-left relative z-10 font-mono text-xs text-slate-500">
+      <footer className="py-16 px-6 bg-slate-100 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900 text-left relative z-10 font-mono text-xs text-slate-600 dark:text-slate-500 transition-colors duration-300">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
           <div className="space-y-3">
-            <div className="flex items-center gap-2 text-white font-extrabold tracking-widest uppercase">
-              <div className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+            <div className="flex items-center gap-2 text-slate-900 dark:text-white font-extrabold tracking-widest uppercase">
+              <div className="w-1.5 h-1.5 rounded-full bg-indigo-600 dark:bg-cyan-400" />
               <span>{portfolioData.footer.brand}</span>
             </div>
-            <p className="text-[10px] text-slate-400 max-w-sm font-sans leading-relaxed">
+            <p className="text-[10px] text-slate-700 dark:text-slate-400 max-w-sm font-sans leading-relaxed">
               {portfolioData.footer.description}
             </p>
-            <p className="text-[10px] text-slate-600 italic">
+            <p className="text-[10px] text-slate-500 dark:text-slate-600 italic">
               "{portfolioData.footer.quote}"
             </p>
           </div>
@@ -248,7 +230,7 @@ export default function App() {
           <div className="flex flex-col md:items-end gap-3 text-[10px]">
             <div className="flex gap-4">
               {portfolioData.footer.quickLinks.map((link) => (
-                <a key={link.title} href={link.href} className="hover:text-cyan-400 transition-colors cursor-pointer uppercase">
+                <a key={link.title} href={link.href} className="hover:text-indigo-600 dark:hover:text-cyan-400 transition-colors cursor-pointer uppercase font-semibold">
                   {link.title}
                 </a>
               ))}

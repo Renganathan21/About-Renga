@@ -43,7 +43,7 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills, skillLevel
   };
 
   return (
-    <section id="skills" className="py-24 px-6 relative overflow-hidden bg-slate-950">
+    <section id="skills" className="py-24 px-6 relative overflow-hidden bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
       
       {/* Dynamic glow overlay */}
       <div
@@ -59,27 +59,27 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills, skillLevel
         
         {/* Section Header */}
         <div className="flex flex-col items-start text-left mb-16">
-          <div className="inline-flex items-center gap-2 font-mono text-[10px] tracking-widest text-cyan-400 uppercase mb-2">
+          <div className="inline-flex items-center gap-2 font-mono text-[10px] tracking-widest text-indigo-600 dark:text-cyan-400 uppercase mb-2 font-bold">
             <span>// 05</span>
             <span>{skills.title.toUpperCase()} MATRIX</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white uppercase font-sans">
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white uppercase font-sans">
             {skills.subtitle}
           </h2>
-          <div className="h-[1px] w-20 bg-cyan-400 mt-4" />
+          <div className="h-[2px] w-20 bg-indigo-600 dark:bg-cyan-400 mt-4 rounded-full" />
         </div>
 
         {/* Master layout: Professional Core Levels on left, Categorized taxonomy on right */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* Left: Unique Segmented Professional Core Levels (5 cols) */}
-          <div className="lg:col-span-5 p-6 rounded border border-slate-900 bg-slate-950/60 backdrop-blur-md space-y-6 text-left">
-            <div className="border-b border-slate-900 pb-4">
-              <h3 className="font-mono text-[10px] font-bold text-cyan-400 tracking-widest uppercase flex items-center gap-2">
-                <span className="inline-block w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
+          <div className="lg:col-span-5 p-6 rounded-xl border border-slate-200 dark:border-slate-900 bg-white dark:bg-slate-950/60 backdrop-blur-md space-y-6 text-left shadow-sm dark:shadow-none">
+            <div className="border-b border-slate-200 dark:border-slate-900 pb-4">
+              <h3 className="font-mono text-[10px] font-bold text-indigo-600 dark:text-cyan-400 tracking-widest uppercase flex items-center gap-2">
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-indigo-600 dark:bg-cyan-400 animate-ping" />
                 <span>CORE CAPABILITY LEVELS</span>
               </h3>
-              <p className="text-[10px] text-slate-500 font-sans mt-1 uppercase tracking-wider">
+              <p className="text-[10px] text-slate-500 font-sans mt-1 uppercase tracking-wider font-medium">
                 Ranked by real-world system architecture authority
               </p>
             </div>
@@ -90,20 +90,20 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills, skillLevel
                 return (
                   <div
                     key={skill.name}
-                    className="group/item p-4 rounded bg-slate-900/20 border border-slate-900/60 hover:border-slate-800 transition-all duration-300 space-y-3"
+                    className="group/item p-4 rounded-lg bg-slate-50/80 dark:bg-slate-900/20 border border-slate-200 dark:border-slate-900/60 hover:border-slate-300 dark:hover:border-slate-800 transition-all duration-300 space-y-3"
                   >
                     {/* Header: Skill Name & Professional Badge */}
                     <div className="flex justify-between items-start gap-4">
                       <div className="space-y-0.5">
-                        <span className="font-sans text-sm font-bold text-slate-100 tracking-wide uppercase block group-hover/item:text-cyan-300 transition-colors">
+                        <span className="font-sans text-sm font-bold text-slate-900 dark:text-slate-100 tracking-wide uppercase block group-hover/item:text-indigo-600 dark:group-hover/item:text-cyan-300 transition-colors">
                           {skill.name}
                         </span>
-                        <span className="font-mono text-[9px] text-slate-500 uppercase tracking-widest block">
+                        <span className="font-mono text-[9px] text-slate-500 uppercase tracking-widest block font-medium">
                           SYSTEM VECTOR STATUS: {tier.status}
                         </span>
                       </div>
 
-                      <span className="px-2 py-0.5 rounded bg-slate-950 border border-slate-900 text-cyan-400 font-mono text-[9px] font-bold tracking-widest uppercase shrink-0">
+                      <span className="px-2 py-0.5 rounded bg-indigo-50 dark:bg-slate-950 border border-indigo-100 dark:border-slate-900 text-indigo-700 dark:text-cyan-400 font-mono text-[9px] font-bold tracking-widest uppercase shrink-0 shadow-2xs">
                         {tier.label}
                       </span>
                     </div>
@@ -117,8 +117,8 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills, skillLevel
                             key={blockIdx}
                             className={`h-[6px] flex-1 rounded-sm transition-all duration-500 ${
                               isActive
-                                ? "bg-gradient-to-r from-cyan-500 to-indigo-500 shadow-[0_0_8px_rgba(34,211,238,0.2)]"
-                                : "bg-slate-900 border border-slate-800"
+                                ? "bg-gradient-to-r from-indigo-600 to-cyan-500 dark:from-cyan-500 dark:to-indigo-500 shadow-2xs"
+                                : "bg-slate-200 dark:bg-slate-900 border border-slate-300 dark:border-slate-800"
                             }`}
                           />
                         );
@@ -126,7 +126,7 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills, skillLevel
                     </div>
 
                     {/* Tier Capability description */}
-                    <p className="text-[11px] text-slate-400 leading-relaxed font-sans pt-1">
+                    <p className="text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed font-sans pt-1">
                       {tier.description}
                     </p>
                   </div>
@@ -140,17 +140,17 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills, skillLevel
             {skills.categories.map((cat) => (
               <div
                 key={cat.title}
-                className="p-6 rounded border border-slate-900 bg-slate-900/10 backdrop-blur-sm space-y-4 hover:border-slate-800 transition-all duration-300 text-left relative overflow-hidden group"
+                className="p-6 rounded-xl border border-slate-200 dark:border-slate-900 bg-white dark:bg-slate-900/10 backdrop-blur-sm space-y-4 hover:border-slate-300 dark:hover:border-slate-800 transition-all duration-300 text-left relative overflow-hidden group shadow-2xs dark:shadow-none"
               >
                 {/* Micro visual accent corner line */}
-                <div className="absolute right-0 top-0 w-8 h-[1px] bg-cyan-500/20 group-hover:bg-cyan-400/50 transition-colors" />
-                <div className="absolute right-0 top-0 h-8 w-[1px] bg-cyan-500/20 group-hover:bg-cyan-400/50 transition-colors" />
+                <div className="absolute right-0 top-0 w-8 h-[1px] bg-indigo-500/20 dark:bg-cyan-500/20 group-hover:bg-indigo-600/50 dark:group-hover:bg-cyan-400/50 transition-colors" />
+                <div className="absolute right-0 top-0 h-8 w-[1px] bg-indigo-500/20 dark:bg-cyan-500/20 group-hover:bg-indigo-600/50 dark:group-hover:bg-cyan-400/50 transition-colors" />
 
-                <div className="flex items-center gap-2 text-cyan-400">
-                  <div className="p-1.5 rounded bg-slate-950 border border-slate-900">
+                <div className="flex items-center gap-2 text-indigo-600 dark:text-cyan-400">
+                  <div className="p-1.5 rounded-md bg-indigo-50 dark:bg-slate-950 border border-indigo-100 dark:border-slate-900">
                     <LucideIcon name={cat.icon} size={13} />
                   </div>
-                  <h4 className="font-sans text-xs font-extrabold uppercase tracking-widest text-white">
+                  <h4 className="font-sans text-xs font-extrabold uppercase tracking-widest text-slate-900 dark:text-white">
                     {cat.title}
                   </h4>
                 </div>
@@ -159,7 +159,7 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills, skillLevel
                   {cat.skills.map((s) => (
                     <span
                       key={s}
-                      className="px-2.5 py-1 rounded bg-slate-950 text-slate-400 border border-slate-900/80 hover:border-slate-800 hover:text-white text-[10px] font-mono transition-all duration-200 uppercase tracking-wider"
+                      className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-950 text-slate-700 dark:text-slate-400 border border-slate-200 dark:border-slate-900/80 hover:border-slate-300 dark:hover:border-slate-800 hover:text-slate-950 dark:hover:text-white text-[10px] font-mono transition-all duration-200 uppercase tracking-wider shadow-2xs dark:shadow-none"
                     >
                       {s}
                     </span>

@@ -19,7 +19,7 @@ export const TimelineSection: React.FC<TimelineSectionProps> = ({ timeline, them
   );
 
   return (
-    <section id="timeline" className="py-24 px-6 relative overflow-hidden bg-slate-950">
+    <section id="timeline" className="py-24 px-6 relative overflow-hidden bg-white dark:bg-slate-950 transition-colors duration-300">
       
       {/* Glow overlay */}
       <div
@@ -35,14 +35,14 @@ export const TimelineSection: React.FC<TimelineSectionProps> = ({ timeline, them
         
         {/* Section Header */}
         <div className="flex flex-col items-start text-left mb-12">
-          <div className="inline-flex items-center gap-2 font-mono text-[10px] tracking-widest text-cyan-400 uppercase mb-2">
+          <div className="inline-flex items-center gap-2 font-mono text-[10px] tracking-widest text-indigo-600 dark:text-cyan-400 uppercase mb-2 font-bold">
             <span>// 05</span>
             <span>{timeline.title.toUpperCase()}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white uppercase font-sans">
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white uppercase font-sans">
             {timeline.subtitle}
           </h2>
-          <div className="h-[1px] w-20 bg-cyan-400 mt-4" />
+          <div className="h-[2px] w-20 bg-indigo-600 dark:bg-cyan-400 mt-4 rounded-full" />
         </div>
 
         {/* Filter categories bar */}
@@ -53,8 +53,8 @@ export const TimelineSection: React.FC<TimelineSectionProps> = ({ timeline, them
               onClick={() => setFilter(cat)}
               className={`px-4 py-2 rounded-full border transition-all duration-300 cursor-pointer ${
                 filter === cat
-                  ? "bg-white text-slate-950 border-white font-bold"
-                  : "bg-slate-900/40 text-slate-400 border-slate-900 hover:border-slate-800 hover:text-slate-200"
+                  ? "bg-indigo-600 text-white border-indigo-600 dark:bg-white dark:text-slate-950 dark:border-white font-bold shadow-xs"
+                  : "bg-white dark:bg-slate-900/40 text-slate-700 dark:text-slate-400 border-slate-200 dark:border-slate-900 hover:border-slate-300 dark:hover:border-slate-800 hover:text-slate-900 dark:hover:text-slate-200 shadow-2xs dark:shadow-none"
               }`}
             >
               {cat.toUpperCase()}
@@ -63,7 +63,7 @@ export const TimelineSection: React.FC<TimelineSectionProps> = ({ timeline, them
         </div>
 
         {/* Vertical Line Timeline core structure */}
-        <div className="relative border-l border-slate-900 ml-4 md:ml-32 text-left">
+        <div className="relative border-l border-slate-200 dark:border-slate-900 ml-4 md:ml-32 text-left">
           
           <AnimatePresence mode="popLayout">
             {filteredItems.map((item, index) => {
@@ -77,33 +77,33 @@ export const TimelineSection: React.FC<TimelineSectionProps> = ({ timeline, them
                   className="mb-12 relative pl-8 md:pl-16 last:mb-0 group"
                 >
                   {/* Left Year Badge (Desktop only) */}
-                  <div className="absolute left-[-140px] top-1.5 hidden md:block w-28 text-right font-mono font-extrabold text-lg text-slate-500 group-hover:text-cyan-400 transition-colors">
+                  <div className="absolute left-[-140px] top-1.5 hidden md:block w-28 text-right font-mono font-extrabold text-lg text-slate-500 group-hover:text-indigo-600 dark:group-hover:text-cyan-400 transition-colors">
                     {item.year}
                   </div>
 
                   {/* Bullet Marker with custom category icon */}
                   <div
-                    className="absolute left-[-10px] top-2 h-5 w-5 rounded-full border bg-slate-950 transition-all duration-300 group-hover:scale-110 flex items-center justify-center p-0.5 text-cyan-400 border-cyan-400"
+                    className="absolute left-[-10px] top-2 h-5 w-5 rounded-full border bg-white dark:bg-slate-950 transition-all duration-300 group-hover:scale-110 flex items-center justify-center p-0.5 text-indigo-600 dark:text-cyan-400 border-indigo-600 dark:border-cyan-400 shadow-2xs"
                   >
                     <LucideIcon name={item.icon || "Award"} size={10} />
                   </div>
 
                   {/* Body Box */}
-                  <div className="p-6 rounded border border-slate-900 bg-slate-900/10 backdrop-blur-sm hover:border-slate-800 transition-all duration-300">
+                  <div className="p-6 rounded-xl border border-slate-200 dark:border-slate-900 bg-slate-50/80 dark:bg-slate-900/10 backdrop-blur-sm hover:border-slate-300 dark:hover:border-slate-800 transition-all duration-300 shadow-2xs dark:shadow-none">
                     <div className="flex flex-wrap justify-between items-center gap-2 mb-2 font-mono text-[10px]">
                       {/* Mobile Year Badge */}
-                      <span className="md:hidden font-bold text-cyan-400">{item.year}</span>
+                      <span className="md:hidden font-bold text-indigo-600 dark:text-cyan-400">{item.year}</span>
                       
-                      <span className="px-2 py-0.5 rounded border border-cyan-500/20 uppercase bg-slate-950/80 font-bold text-cyan-400">
+                      <span className="px-2 py-0.5 rounded border border-indigo-100 dark:border-cyan-500/20 uppercase bg-indigo-50/80 dark:bg-slate-950/80 font-bold text-indigo-700 dark:text-cyan-400">
                         {item.category}
                       </span>
                     </div>
 
-                    <h3 className="text-sm sm:text-base font-bold text-white uppercase tracking-tight mb-2 font-sans">
+                    <h3 className="text-sm sm:text-base font-bold text-slate-900 dark:text-white uppercase tracking-tight mb-2 font-sans">
                       {item.title}
                     </h3>
 
-                    <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                    <p className="text-slate-700 dark:text-slate-400 text-xs sm:text-sm leading-relaxed">
                       {item.description}
                     </p>
                   </div>

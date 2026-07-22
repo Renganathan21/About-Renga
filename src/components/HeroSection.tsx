@@ -89,13 +89,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ hero, site, theme }) =
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/80 border border-slate-800 backdrop-blur-sm"
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 backdrop-blur-sm shadow-2xs dark:shadow-none"
           >
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-600 dark:bg-cyan-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-600 dark:bg-cyan-400"></span>
             </span>
-            <span className="font-mono text-[9px] tracking-wider text-slate-300 uppercase">
+            <span className="font-mono text-[9px] tracking-wider text-slate-800 dark:text-slate-300 uppercase font-semibold">
               {hero.badgeText}
             </span>
           </motion.div>
@@ -106,7 +106,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ hero, site, theme }) =
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="font-sans text-4xl sm:text-5xl xl:text-6xl font-extrabold tracking-tight text-white leading-[1.1]"
+              className="font-sans text-4xl sm:text-5xl xl:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.1]"
             >
               {hero.headline}
             </motion.h1>
@@ -116,14 +116,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ hero, site, theme }) =
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="font-mono text-base sm:text-lg text-slate-400 flex items-center min-h-[30px]"
+              className="font-mono text-base sm:text-lg text-slate-600 dark:text-slate-400 flex items-center min-h-[30px]"
             >
-              <span className="text-cyan-400 font-bold mr-2">//</span>
+              <span className="text-indigo-600 dark:text-cyan-400 font-bold mr-2">//</span>
               <span>I act as a </span>
-              <span className="text-white font-semibold ml-1.5 underline decoration-cyan-400 decoration-2 underline-offset-4">
+              <span className="text-slate-900 dark:text-white font-semibold ml-1.5 underline decoration-indigo-600 dark:decoration-cyan-400 decoration-2 underline-offset-4">
                 {typedText}
               </span>
-              <span className="ml-1 animate-ping text-cyan-400">|</span>
+              <span className="ml-1 animate-ping text-indigo-600 dark:text-cyan-400">|</span>
             </motion.div>
           </div>
 
@@ -132,7 +132,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ hero, site, theme }) =
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="text-slate-400 text-sm sm:text-base leading-relaxed max-w-xl"
+            className="text-slate-700 dark:text-slate-400 text-sm sm:text-base leading-relaxed max-w-xl font-normal"
           >
             {hero.subheadline}
           </motion.p>
@@ -142,19 +142,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ hero, site, theme }) =
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="grid grid-cols-2 md:grid-cols-3 gap-6 pt-4 border-t border-slate-900 w-full max-w-xl text-left"
+            className="grid grid-cols-2 md:grid-cols-3 gap-6 pt-4 border-t border-slate-200 dark:border-slate-900 w-full max-w-xl text-left"
           >
             <div>
-              <div className="font-mono text-[9px] text-slate-500 tracking-wider uppercase">ROLE</div>
-              <div className="text-xs font-semibold text-slate-200 mt-1">{site.currentRole}</div>
+              <div className="font-mono text-[9px] text-slate-500 tracking-wider uppercase font-medium">ROLE</div>
+              <div className="text-xs font-bold text-slate-900 dark:text-slate-200 mt-1">{site.currentRole}</div>
             </div>
             <div>
-              <div className="font-mono text-[9px] text-slate-500 tracking-wider uppercase">EXPERIENCE</div>
-              <div className="text-xs font-semibold text-slate-200 mt-1">{site.yearsExperience}+ Years Craft</div>
+              <div className="font-mono text-[9px] text-slate-500 tracking-wider uppercase font-medium">EXPERIENCE</div>
+              <div className="text-xs font-bold text-slate-900 dark:text-slate-200 mt-1">{site.yearsExperience}+ Years Craft</div>
             </div>
             <div className="col-span-2 md:col-span-1">
-              <div className="font-mono text-[9px] text-slate-500 tracking-wider uppercase">LOCATION</div>
-              <div className="text-xs font-semibold text-slate-200 mt-1">{site.location}</div>
+              <div className="font-mono text-[9px] text-slate-500 tracking-wider uppercase font-medium">LOCATION</div>
+              <div className="text-xs font-bold text-slate-900 dark:text-slate-200 mt-1">{site.location}</div>
             </div>
           </motion.div>
 
@@ -173,12 +173,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ hero, site, theme }) =
                 <a
                   key={index}
                   href={cta.href}
-                  className={`px-6 py-3.5 rounded-full font-mono text-xs tracking-wider uppercase transition-all duration-300 flex items-center gap-2 cursor-pointer ${
+                  className={`px-6 py-3.5 rounded-full font-mono text-xs tracking-wider uppercase transition-all duration-300 flex items-center gap-2 cursor-pointer shadow-xs ${
                     isPrimary
-                      ? "bg-white text-slate-950 font-bold hover:bg-slate-200 shadow-xl"
+                      ? "bg-slate-900 text-white font-bold hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 shadow-md"
                       : isAccent
-                      ? "bg-slate-900 text-cyan-400 border border-cyan-500/30 hover:border-cyan-400"
-                      : "bg-slate-950 text-slate-300 border border-slate-800 hover:border-slate-700"
+                      ? "bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100 font-semibold dark:bg-slate-900 dark:text-cyan-400 dark:border-cyan-500/30 dark:hover:border-cyan-400"
+                      : "bg-white text-slate-800 border border-slate-300 hover:bg-slate-100 font-medium dark:bg-slate-950 dark:text-slate-300 dark:border-slate-800"
                   }`}
                 >
                   <LucideIcon name={cta.icon} size={13} />
@@ -198,9 +198,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ hero, site, theme }) =
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.4, type: "spring", stiffness: 100 }}
-            className="relative w-72 h-72 sm:w-96 sm:h-96 rounded-full overflow-hidden border border-slate-800 p-2 bg-slate-900/30 backdrop-blur-sm shadow-2xl"
+            className="relative w-72 h-72 sm:w-96 sm:h-96 rounded-full overflow-hidden border border-slate-200 dark:border-slate-800 p-2 bg-white/80 dark:bg-slate-900/30 backdrop-blur-sm shadow-xl dark:shadow-2xl"
           >
-            <div className="w-full h-full rounded-full overflow-hidden relative bg-slate-950 flex items-center justify-center">
+            <div className="w-full h-full rounded-full overflow-hidden relative bg-slate-100 dark:bg-slate-950 flex items-center justify-center">
               {(!hasImageError && !hero.profileImage.includes("photos.app.goo.gl")) ? (
                 <img
                   src={hero.profileImage}
@@ -210,25 +210,25 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ hero, site, theme }) =
                   className="w-full h-full object-cover grayscale opacity-90 hover:grayscale-0 transition-all duration-700"
                 />
               ) : (
-                <div className="flex flex-col items-center justify-center space-y-4 p-8 w-full h-full rounded-full bg-gradient-to-b from-slate-950 to-slate-900 text-center relative overflow-hidden group">
+                <div className="flex flex-col items-center justify-center space-y-4 p-8 w-full h-full rounded-full bg-gradient-to-b from-slate-100 to-slate-200 dark:from-slate-950 dark:to-slate-900 text-center relative overflow-hidden group">
                   {/* Glowing cyber grid pattern in background */}
-                  <div className="absolute inset-0 opacity-[0.05] pointer-events-none bg-[radial-gradient(#22d3ee_1px,transparent_1px)] [background-size:16px_16px]" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-cyan-950/20 via-transparent to-transparent opacity-40" />
+                  <div className="absolute inset-0 opacity-[0.05] pointer-events-none bg-[radial-gradient(#4f46e5_1px,transparent_1px)] dark:bg-[radial-gradient(#22d3ee_1px,transparent_1px)] [background-size:16px_16px]" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-indigo-100/40 dark:from-cyan-950/20 via-transparent to-transparent opacity-40" />
                   
                   {/* Tech/author styled avatar icon/initials */}
-                  <div className="relative z-10 w-24 h-24 rounded-full border border-cyan-500/20 flex items-center justify-center bg-slate-950/80 shadow-[0_0_15px_rgba(34,211,238,0.1)] group-hover:border-cyan-400 transition-colors duration-500">
-                    <span className="text-4xl font-extrabold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400 font-sans">
+                  <div className="relative z-10 w-24 h-24 rounded-full border border-indigo-200 dark:border-cyan-500/20 flex items-center justify-center bg-white/90 dark:bg-slate-950/80 shadow-[0_0_15px_rgba(79,70,229,0.1)] dark:shadow-[0_0_15px_rgba(34,211,238,0.1)] group-hover:border-indigo-400 dark:group-hover:border-cyan-400 transition-colors duration-500">
+                    <span className="text-4xl font-extrabold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-sky-600 dark:from-cyan-400 dark:to-indigo-400 font-sans">
                       AR
                     </span>
                   </div>
                   <div className="relative z-10 space-y-1">
-                    <div className="font-mono text-[10px] tracking-widest text-cyan-400 font-bold uppercase">A. RENGANATHAN</div>
+                    <div className="font-mono text-[10px] tracking-widest text-indigo-700 dark:text-cyan-400 font-bold uppercase">A. RENGANATHAN</div>
                     <div className="font-mono text-[8px] tracking-widest text-slate-500 uppercase">ENGINEER & AUTHOR</div>
                   </div>
                 </div>
               )}
               {/* Overlay filter */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0E] via-transparent to-transparent opacity-60 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-200/40 dark:from-[#0A0A0E] via-transparent to-transparent opacity-60 pointer-events-none" />
             </div>
 
             {/* Glowing Orbit Rings */}
@@ -250,11 +250,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ hero, site, theme }) =
           </motion.div>
 
           {/* Atmospheric Telemetry Readout Box (Marginal Details) */}
-          <div className="absolute bottom-[-10px] right-[-10px] sm:bottom-4 sm:right-4 p-4 rounded bg-slate-950/90 border border-slate-800 font-mono text-[9px] text-slate-500 leading-relaxed text-left w-48 shadow-lg backdrop-blur-sm pointer-events-none select-none">
-            <div className="text-cyan-400 font-bold mb-1">AURA DIAGNOSTICS</div>
-            <div>STATION: LOCAL_WS_SG</div>
+          <div className="absolute bottom-[-10px] right-[-10px] sm:bottom-4 sm:right-4 p-4 rounded-lg bg-white/95 dark:bg-slate-950/90 border border-slate-200 dark:border-slate-800 font-mono text-[9px] text-slate-600 dark:text-slate-500 leading-relaxed text-left w-48 shadow-lg backdrop-blur-sm pointer-events-none select-none">
+            <div className="text-indigo-600 dark:text-cyan-400 font-bold mb-1">AURA DIAGNOSTICS</div>
+            <div>STATION: LOCAL_WS_IN</div>
             <div>SYS_LOAD: CALIBRATED</div>
-            <div>COORDINATES: 1.3521° N, 103.8198° E</div>
+            <div>COORDINATES: 8.7139° N, 77.7567° E</div>
             <div>STATUS: ONLINE // ENHANCED</div>
           </div>
 

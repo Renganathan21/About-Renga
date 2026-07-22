@@ -6,9 +6,11 @@ import { LucideIcon } from "./LucideIcon";
 interface NavbarProps {
   site: SiteInfo;
   items: NavItem[];
+  isDarkMode: boolean;
+  onToggleTheme: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ site, items }) => {
+export const Navbar: React.FC<NavbarProps> = ({ site, items, isDarkMode, onToggleTheme }) => {
   const [activeAnchor, setActiveAnchor] = useState("#home");
   const [scrolled, setScrolled] = useState(false);
 
@@ -93,27 +95,38 @@ export const Navbar: React.FC<NavbarProps> = ({ site, items }) => {
           })}
         </nav>
 
-        {/* Compact Right Side Status Indicator */}
-        <div className="hidden sm:flex items-center gap-2">
-          <div className="relative flex h-2 w-2">
-            <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${
-              site.availabilityStatus === "available"
-                ? "bg-emerald-400"
-                : site.availabilityStatus === "busy"
-                ? "bg-red-400"
-                : "bg-amber-400"
-            }`}></span>
-            <span className={`relative inline-flex rounded-full h-2 w-2 ${
-              site.availabilityStatus === "available"
-                ? "bg-emerald-400"
-                : site.availabilityStatus === "busy"
-                ? "bg-red-400"
-                : "bg-amber-400"
-            }`}></span>
+        {/* Compact Right Side Status & Theme Toggle */}
+        <div className="flex items-center gap-4">
+          <button
+            onClick={onToggleTheme}
+            className="p-2 rounded-full border border-slate-800 bg-slate-900/40 hover:bg-slate-900 transition-colors cursor-pointer text-slate-400 hover:text-white flex items-center justify-center"
+            title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+            aria-label="Toggle theme"
+          >
+            {isDarkMode ? <LucideIcon name="Sun" size={13} /> : <LucideIcon name="Moon" size={13} />}
+          </button>
+
+          <div className="hidden sm:flex items-center gap-2">
+            <div className="relative flex h-2 w-2">
+              <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${
+                site.availabilityStatus === "available"
+                  ? "bg-emerald-400"
+                  : site.availabilityStatus === "busy"
+                  ? "bg-red-400"
+                  : "bg-amber-400"
+              }`}></span>
+              <span className={`relative inline-flex rounded-full h-2 w-2 ${
+                site.availabilityStatus === "available"
+                  ? "bg-emerald-400"
+                  : site.availabilityStatus === "busy"
+                  ? "bg-red-400"
+                  : "bg-amber-400"
+              }`}></span>
+            </div>
+            <span className="font-mono text-[9px] text-slate-400 tracking-wider uppercase">
+              {site.availabilityText}
+            </span>
           </div>
-          <span className="font-mono text-[9px] text-slate-400 tracking-wider uppercase">
-            {site.availabilityText}
-          </span>
         </div>
       </div>
     </motion.header>

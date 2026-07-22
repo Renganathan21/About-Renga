@@ -8,7 +8,7 @@ interface ProcessSectionProps {
 
 export const ProcessSection: React.FC<ProcessSectionProps> = ({ process, theme }) => {
   return (
-    <section id="process" className="py-24 px-6 relative overflow-hidden bg-[#0a0a0f]">
+    <section id="process" className="py-24 px-6 relative overflow-hidden bg-slate-950">
       
       {/* Dynamic background lighting */}
       <div

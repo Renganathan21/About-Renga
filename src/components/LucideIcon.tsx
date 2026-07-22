@@ -47,7 +47,9 @@ import {
   SlidersHorizontal,
   Laptop,
   BookMarked,
-  Info
+  Info,
+  Sun,
+  Moon
 } from "lucide-react";
 
 const iconMap: Record<string, React.ComponentType<any>> = {
@@ -98,7 +100,9 @@ const iconMap: Record<string, React.ComponentType<any>> = {
   SlidersHorizontal,
   Laptop,
   BookMarked,
-  Info
+  Info,
+  Sun,
+  Moon
 };
 
 interface LucideIconProps {

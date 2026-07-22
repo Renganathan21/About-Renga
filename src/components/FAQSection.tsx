@@ -12,7 +12,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ faq, theme }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-24 px-6 relative overflow-hidden bg-[#0a0a0f]">
+    <section id="faq" className="py-24 px-6 relative overflow-hidden bg-slate-950">
       
       {/* Dynamic background glow */}
       <div

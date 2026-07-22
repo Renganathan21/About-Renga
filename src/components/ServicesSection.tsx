@@ -9,7 +9,7 @@ interface ServicesSectionProps {
 
 export const ServicesSection: React.FC<ServicesSectionProps> = ({ services, theme }) => {
   return (
-    <section id="services" className="py-24 px-6 relative overflow-hidden bg-[#0a0a0f]">
+    <section id="services" className="py-24 px-6 relative overflow-hidden bg-slate-950">
       
       {/* Decorative top border ambient line */}
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-slate-800 to-transparent" />

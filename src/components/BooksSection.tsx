@@ -13,7 +13,7 @@ export const BooksSection: React.FC<BooksSectionProps> = ({ books, theme }) => {
   const currentBook = books.items[activeBookIndex] || books.items[0];
 
   return (
-    <section id="books" className="py-24 px-6 relative overflow-hidden bg-[#07070a]">
+    <section id="books" className="py-24 px-6 relative overflow-hidden bg-slate-950">
       {/* Glow */}
       <div
         className="absolute w-[450px] h-[450px] blur-[150px] rounded-full pointer-events-none opacity-5"

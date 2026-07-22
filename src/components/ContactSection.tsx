@@ -14,15 +14,15 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ contact, socials
   const [submitted, setSubmitted] = useState(false);
   const [currentTime, setCurrentTime] = useState("");
 
-  // Keep a digital clock of SGT timezone
+  // Keep a digital clock of IST timezone
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
-      // Format to SGT/UTC or local time
+      // Format to IST/UTC or local time
       setCurrentTime(
         now.toLocaleTimeString("en-US", {
           hour12: false,
-          timeZone: "Asia/Singapore",
+          timeZone: "Asia/Kolkata",
         })
       );
     };
@@ -92,7 +92,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ contact, socials
             <div className="space-y-4 font-mono text-xs max-w-sm">
               <div className="p-4 bg-slate-900/40 border border-slate-900/80 rounded flex justify-between items-center">
                 <span className="text-slate-500">STATION TIME:</span>
-                <span className="text-cyan-400 font-bold">{currentTime} SGT</span>
+                <span className="text-cyan-400 font-bold">{currentTime} IST</span>
               </div>
               <div className="p-4 bg-slate-900/40 border border-slate-900/80 rounded flex justify-between items-center">
                 <span className="text-slate-500">RESPONSE WINDOW:</span>
@@ -100,7 +100,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ contact, socials
               </div>
               <div className="p-4 bg-slate-900/40 border border-slate-900/80 rounded flex justify-between items-center">
                 <span className="text-slate-500">COORDINATES:</span>
-                <span className="text-slate-200 font-bold">SINGAPORE</span>
+                <span className="text-slate-200 font-bold">{contact.location ? contact.location.toUpperCase() : "TIRUNELVELI, INDIA"}</span>
               </div>
             </div>
 

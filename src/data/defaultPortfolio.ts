@@ -75,7 +75,7 @@ export const defaultPortfolio: PortfolioData = {
       "UI/UX Enthusiast",
       "AI Explorer"
     ],
-    profileImage: "https://photos.app.goo.gl/rqwc7sWLBHwf9DuZ7",
+    profileImage: "https://avatars.githubusercontent.com/u/114427016?s=400&u=e672de3a4ec8cb0848bac902c8d837c44df84669&v=4",
     ctas: [
       {
         label: "Hire Me",
@@ -171,7 +171,7 @@ export const defaultPortfolio: PortfolioData = {
       "Outside my professional work, I love building side projects, experimenting with AI, designing startup ideas, and writing novels. I believe engineering and creativity complement each other, enabling the creation of products that people genuinely enjoy.",
       "Whether it's developing enterprise software, planning an MVP, or writing a science fiction novel, my approach remains the same—understand the problem deeply, simplify complexity, and build something meaningful."
     ],
-    profileImage: "https://photos.app.goo.gl/rqwc7sWLBHwf9DuZ7",
+    profileImage: "https://avatars.githubusercontent.com/u/114427016?s=400&u=e672de3a4ec8cb0848bac902c8d837c44df84669&v=4",
     highlights: [
       {
         title: "Enterprise Frontend Development",

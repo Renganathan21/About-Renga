@@ -43,7 +43,7 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills, skillLevel
   };
 
   return (
-    <section id="skills" className="py-24 px-6 relative overflow-hidden bg-[#0a0a0f]">
+    <section id="skills" className="py-24 px-6 relative overflow-hidden bg-slate-950">
       
       {/* Dynamic glow overlay */}
       <div

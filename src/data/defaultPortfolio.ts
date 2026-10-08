@@ -1,4 +1,7 @@
 import { PortfolioData } from "../types";
+import { getExperienceDetails } from "../utils/experience";
+
+const currentExperience = getExperienceDetails();
 
 export const defaultPortfolio: PortfolioData = {
   site: {
@@ -9,7 +12,7 @@ export const defaultPortfolio: PortfolioData = {
     availabilityStatus: "available",
     availabilityText: "AVAILABLE FOR FREELANCE, PRODUCT CONSULTING & CREATIVE COLLABORATIONS",
     currentRole: "Frontend Developer",
-    yearsExperience: 2.5,
+    yearsExperience: currentExperience.years,
     location: "Tirunelveli, Tamil Nadu, India",
     timezone: "IST (UTC+5:30)"
   },
@@ -99,7 +102,7 @@ export const defaultPortfolio: PortfolioData = {
     quickStats: [
       {
         label: "Experience",
-        value: "2.5+ Years"
+        value: currentExperience.displayYears
       },
       {
         label: "Projects",
@@ -235,7 +238,7 @@ export const defaultPortfolio: PortfolioData = {
   statistics: [
     {
       label: "Years of Experience",
-      value: "2.5+",
+      value: currentExperience.displayPlus,
       icon: "Briefcase"
     },
     {
@@ -794,7 +797,7 @@ export const defaultPortfolio: PortfolioData = {
         location: "Tirunelveli, Tamil Nadu, India",
         workMode: "Hybrid",
         duration: "2023 - Present",
-        experience: "2.5+ Years",
+        experience: currentExperience.displayYears,
         current: true,
         description: "Leading frontend development for enterprise-grade product suites. Highly awarded for outstanding engineering contributions (Rising Star Award) with a strong focus on UI performance optimization, modular component systems, and resolving complex technical challenges.",
         responsibilities: [
@@ -929,7 +932,7 @@ export const defaultPortfolio: PortfolioData = {
   careerHighlights: {
     title: "Career Highlights",
     items: [
-      "2.5+ Years of Frontend Development",
+      currentExperience.displayFull,
       "Enterprise Software Experience",
       "20+ Projects Delivered",
       "Published Author",
@@ -1408,7 +1411,7 @@ export const defaultPortfolio: PortfolioData = {
     title: "Milestones",
     items: [
       {
-        title: "2.5+ Years Experience",
+        title: `${currentExperience.displayYears} Experience`,
         completed: true
       },
       {
